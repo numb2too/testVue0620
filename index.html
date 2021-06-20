@@ -1,4 +1,40 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content = "width=device-width">
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="newToDo" >
+        <input type="checkbox" v-on:change="test($event);">
+        
+        
+    </div>
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script>        
+        Vue.config.devtools = true
+        var app = new Vue({
+            el:'#app',
+            data:{
+                toDos:'',
+                newToDo:'',
+                price:100,
 
+                isShow:true
+            }  ,
+            methods: {
+                addToDo:function(){
+
+                },
+                test:function( event){
+                    console.log(event.target.checked  );
+                    this.isShow=event.target.checked ;
+                }
+            }       
+        })
+
+    </script>
+</body>
 </html>
+
