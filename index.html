@@ -6,10 +6,11 @@
 </head>
 <body>
     <div id="app">
-        <input type="text" v-model="newToDo" >
+        <input type="text" v-model="price" >
         <input type="checkbox" v-on:change="test($event);">
-        
-        
+        <div id="myShow" v-if="isShow">aaaa</div>
+        <li>日幣：{{price*0.25}}</li>
+        <li>日幣：{{price*30}}</li>  
     </div>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script>        
@@ -21,7 +22,7 @@
                 newToDo:'',
                 price:100,
 
-                isShow:true
+                isShow:false
             }  ,
             methods: {
                 addToDo:function(){
